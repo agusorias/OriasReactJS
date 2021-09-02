@@ -1,30 +1,14 @@
-import { useState } from "react";
 import "./EcommerceCard.css";
+import ItemCount from "./ItemCount";
 
-const EcommerceCard = ({elemento,stock,inicial,onAdd})=>{
-    const[count,setCount]=useState(parseInt(inicial));
-    onAdd= count 
-    const incrementalClick = () => {
-    if(count!==parseInt(stock))
-      setCount(count + 1);
-    };
-    const decrementalClick = () => {
-    if(count!==parseInt(inicial))
-        setCount(count - 1);
-    };
-    const onAddClick = () => {
-        console.log(elemento+"="+onAdd);
-    };
+const EcommerceCard = ({item})=>{
+   
     return (
-    <div className="tiendaCard">
-        <h3>{elemento}</h3>  
-        <div className="counterContainer">
-            <button className="counterButtons" onClick={decrementalClick}>-</button>
-            <label>{count}</label>
-            <button className="counterButtons" onClick={incrementalClick}>+</button>
-        </div> 
-        <button className="carritoAddButton" onClick={onAddClick}>Agregar a carrito</button>
-    </div>
+        <div className="tiendaCard">
+            <h3 className="cardText">{item.name}</h3>  
+            <h3 className="cardText">${item.price}</h3> 
+            <ItemCount stock= {item.stock} initial={item.initial}/>
+        </div>
     );
 };
 export default EcommerceCard

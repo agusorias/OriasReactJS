@@ -5,16 +5,17 @@ import Widget from '../Widget/Widget';
 
 function NavBar() {
     return (
-        <Navbar bg="light" expand="xxl">
+        <Navbar bg="light" expand="l" id="top">
             <Container>
+                <Widget/>
                 <Navbar.Brand href="#home">
-                        <img
-                        alt=""
-                        src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13189.png"
-                        width="40"
-                        height="40"
-                        className="d-inline-block align-top"
-                        />{' '}
+                    <img
+                    alt=""
+                    src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13189.png"
+                    width="40"
+                    height="40"
+                    className="d-inline-block align-top"
+                    />{' '}
                     ECOrdoba
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +27,6 @@ function NavBar() {
                     <Nav.Link href="#link">Contacto</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
-                <Widget/>
             </Container>
         </Navbar> 
     )
