@@ -20,7 +20,7 @@ const ItemCount = ({stock ,initial})=>{
                     <label>{count}</label>
                     <button className="counterButtons" onClick={incrementalClick}>+</button>
                 </div> 
-                <p className="cardText cardStock">Stock:{stock}</p> 
+                <p className="cardStock">Stock:{stock}</p> 
                 <button className="carritoAddButton" onClick={onAddClick}>Agregar a carrito</button>
             </div>
         );
