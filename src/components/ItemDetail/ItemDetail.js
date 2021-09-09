@@ -1,12 +1,17 @@
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({item}) {
-    console.log(item.id);
     return (
         <div className="detailCard">
             <img src={item.img} alt={item.name}></img>
-            <h3 className="detailCardText">{item.name}</h3>  
-            <p className="detailCardText">{item.detail}</p> 
+            <div className="detailCardInfo">
+                <div className="detailCardText">
+                    <h3 className="detailCardText">{item.name}</h3>  
+                    <p className="detailCardText">{item.detail}</p> 
+                </div>
+                <ItemCount stock= {item.stock} price={item.price} />
+            </div>
         </div>
     )
 }

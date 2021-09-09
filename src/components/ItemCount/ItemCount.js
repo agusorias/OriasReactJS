@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const ItemCount = ({stock ,initial})=>{
-    const[count,setCount]=useState(parseInt(initial));
+const ItemCount = ({stock,price})=>{
+    const[count,setCount]=useState(parseInt(1));
         const incrementalClick = () => {
         if(count!==parseInt(stock))
         setCount(count + 1);
         };
         const decrementalClick = () => {
-        if(count!==parseInt(initial))
+        if(count!==parseInt(1))
             setCount(count - 1);
         };
         const onAddClick = () => {
@@ -15,6 +15,7 @@ const ItemCount = ({stock ,initial})=>{
         };
         return (
             <div className="cardBuyContainer">
+                <h3 className="cardText">${price*count}</h3> 
                 <div className="counterContainer">
                     <button className="counterButtons" onClick={decrementalClick}>-</button>
                     <label>{count}</label>

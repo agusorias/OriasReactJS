@@ -1,14 +1,18 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Widget from '../Widget/Widget';
+import { Link } from 'react-router-dom';
+import "./NavBar.css";
+
 
 function NavBar() {
     return (
-        <Navbar bg="light" expand="l" id="top">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Widget/>
-                <Navbar.Brand href="#home">
+            <Link to ="/">        
+                <Navbar.Brand href="/" id="brandName">
                     <img
                     alt=""
                     src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13189.png"
@@ -18,17 +22,28 @@ function NavBar() {
                     />{' '}
                     ECOrdoba
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+            </Link>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Inicio</Nav.Link>
-                    <Nav.Link href="#link">Nosotros</Nav.Link>
-                    <Nav.Link href="#link">Tienda</Nav.Link>
-                    <Nav.Link href="#link">Contacto</Nav.Link>
+                <Nav.Link href="#pricing">Contacto</Nav.Link>
+                <NavDropdown title="Tienda" id="collasible-nav-dropdown">
+                    <Link to="/"><NavDropdown.Item href="#action/3.1">Ir a la tienda</NavDropdown.Item></Link>
+                    <NavDropdown.Divider />
+                    <Link to="/category/Limpieza"><NavDropdown.Item href="#action/3.2">Limpieza</NavDropdown.Item></Link>
+                    <Link to="/category/Higiene"><NavDropdown.Item href="#action/3.3">Higiene</NavDropdown.Item></Link>
+                    <Link to="/category/Reciclado"><NavDropdown.Item href="#action/3.4">Reciclado</NavDropdown.Item></Link>
+                </NavDropdown>
                 </Nav>
-                </Navbar.Collapse>
+                <Nav>
+                <Nav.Link>
+                    <Widget/>
+                </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
             </Container>
-        </Navbar> 
+        </Navbar>
+       
     )
 }
 export default NavBar
