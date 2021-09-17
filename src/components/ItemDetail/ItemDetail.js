@@ -1,10 +1,13 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../Context/CartContext";
 
 function ItemDetail({item}) {
 
-    const onAdd=(cant)=>{
-        console.log(cant)  
+    const {addToCart}= useCartContext();
+
+    const onAdd=(count)=>{
+        addToCart( item ,count);
     }
 
     return (
@@ -20,4 +23,5 @@ function ItemDetail({item}) {
         </div>
     )
 }
+
 export default ItemDetail

@@ -10,8 +10,6 @@ export const items = [
   function getItem(id) {
     if (id===undefined) {
         return items
-    }else{
-        return items.find( producto=> producto.id === id)
     }
   }
   
