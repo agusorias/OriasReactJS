@@ -6,6 +6,7 @@ import "./ItemDetail.css";
 const ItemDetailContainer = (props) => {
     
     const [itemDetail, setItemDetail] = useState({})
+    const [loading, setLoading] = useState(true)
 
     const id= props.match.params.id;
 
@@ -23,13 +24,24 @@ const ItemDetailContainer = (props) => {
     
     useEffect(() => {
         getItemDetail
-        .then (res=>setTimeout(() =>setItemDetail(res),2000))
+        .then (resp=>{
+            setTimeout(() => {
+                setItemDetail(resp)
+                setLoading(false)
+            }, 2000);
+        })
     },)
 
     return (
-        <div className="itemDetailContainer">
-            <ItemDetail item={itemDetail}/>
-        </div>
+        <>
+            {loading ? 
+                <h2>Cargando</h2>
+                :        
+                <div className="itemDetailContainer">
+                    <ItemDetail item={itemDetail}/>
+                </div>
+            }  
+        </>
     )
 }
 

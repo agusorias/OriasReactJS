@@ -2,7 +2,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Widget from '../Widget/Widget';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import "./NavBar.css";
 
@@ -36,9 +36,9 @@ function NavBar() {
                 </NavDropdown>
                 </Nav>
                 <Nav>
-                <Nav.Link>
-                    <Widget/>
-                </Nav.Link>
+                <Link to='/cart' >
+                    <CartWidget/>
+                </Link >
                 </Nav>
             </Navbar.Collapse>
             </Container>
