@@ -8,19 +8,28 @@ export const CartContextProvider = ({children}) => {
 
 const [cart, setCart] = useState([]);
 
-  console.log(cart);
 const isInCart = (id) => cart.some((item)=> item.id === id);
-  
+
+console.log(cart);
+
 const addToCart = (item, quantity) =>{
+
   if(isInCart(item.id)){
+
     const newCart=cart.map((cartElement)=>{
+
       if(cartElement.id === item.id){
-        return{...cartElement,quantity: cartElement.quantity+quantity}
+        return{...cartElement, quantity: cartElement.quantity+quantity, stock:cartElement.stock-quantity}
       }else return cartElement;
+
     });
+
     setCart(newCart);
+
   }else{
+
     setCart((prev)=> [...prev, {...item,quantity}]);
+
   }
 }
 

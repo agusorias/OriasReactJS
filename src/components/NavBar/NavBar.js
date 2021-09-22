@@ -11,7 +11,7 @@ function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Link to ="/">        
+            <Link to ="/" style={{ textDecoration: 'none' }}>        
                 <Navbar.Brand href="/" id="brandName">
                     <img
                     alt=""
@@ -26,20 +26,18 @@ function NavBar() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                <Nav.Link href="#pricing">Contacto</Nav.Link>
-                <NavDropdown title="Tienda" id="collasible-nav-dropdown">
-                    <Link to="/"><NavDropdown.Item href="#action/3.1">Ir a la tienda</NavDropdown.Item></Link>
-                    <NavDropdown.Divider />
-                    <Link to="/category/Limpieza"><NavDropdown.Item href="#action/3.2">Limpieza</NavDropdown.Item></Link>
-                    <Link to="/category/Higiene"><NavDropdown.Item href="#action/3.3">Higiene</NavDropdown.Item></Link>
-                    <Link to="/category/Reciclado"><NavDropdown.Item href="#action/3.4">Reciclado</NavDropdown.Item></Link>
-                </NavDropdown>
+                    <Nav.Link href="#pricing">Contacto</Nav.Link>
+                    <NavDropdown title="Tienda" id="collasible-nav-dropdown">
+                        <Link to="/"><NavDropdown.Item href="#action/3.1">Ir a la tienda</NavDropdown.Item></Link>
+                        <NavDropdown.Divider />
+                        <Link to="/category/Limpieza"><NavDropdown.Item href="#action/3.2">Limpieza</NavDropdown.Item></Link>
+                        <Link to="/category/Higiene"><NavDropdown.Item href="#action/3.3">Higiene</NavDropdown.Item></Link>
+                        <Link to="/category/Reciclaje"><NavDropdown.Item href="#action/3.4">Reciclaje</NavDropdown.Item></Link>
+                    </NavDropdown>
                 </Nav>
-                <Nav>
                 <Link to='/cart' >
                     <CartWidget/>
                 </Link >
-                </Nav>
             </Navbar.Collapse>
             </Container>
         </Navbar>

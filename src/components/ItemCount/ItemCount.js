@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const ItemCount = ({stock,price,onAdd})=>{
 
-    const[count,setCount]=useState(parseInt(1));
+    const[count,setCount]=useState(parseFloat(1));
 
     const [buttonChange, setButtonChange] = useState(false)
         
     const incrementalClick = () => {
-        if(count!==parseInt(stock))
+        if(count!==parseFloat(stock))
         setCount(count + 1);
     };
         
     const decrementalClick = () => {
-        if(count!==parseInt(1))
+        if(count!==parseFloat(1))
             setCount(count - 1);
     };
         
@@ -35,7 +35,9 @@ const ItemCount = ({stock,price,onAdd})=>{
                     <Link to='/cart'>
                         <button className="carritoAddButton">Terminar mi compra</button>
                     </Link>
-                    <button className="counterButtons" onClick={cancelar}>Cancelar</button>
+                    <Link to='/'>
+                        <button className="counterButtons" onClick={cancelar}>Volver a la tienda</button>
+                    </Link>
                 </div>
 
                 :

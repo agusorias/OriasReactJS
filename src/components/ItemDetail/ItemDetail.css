@@ -21,7 +21,6 @@
     position: relative;
     top:0px;
     width: 40%;
-    height:100%;
 }
 .detailCardInfo{
     display: flex;
@@ -29,7 +28,7 @@
     justify-content: space-evenly;
 }
 .counterButtons{
-    color: grey;
+    color: #00000099;
     padding: 5px;
     background: none;
     border: none;
@@ -44,10 +43,16 @@
     border-radius: 10px;
     color: #fff;
 }
+.detailCardTitle{
+    text-align: center;
+    color:#000000de;
+    font-size: 38px;
+    z-index: 10;
+}
 .detailCardText{
     text-align: center;
-    color:#000000;
-    text-shadow: 0 2.5px 5px rgba(0,0,0,0.2);
+    color:#00000099;
+    font-size: 18px;
     z-index: 10;
 }
 .cardBuyContainer,.cardBuyInfo{
