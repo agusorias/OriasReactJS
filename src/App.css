@@ -1,11 +1,20 @@
 .ecommerceCardContainer{
     position:relative;
     min-width: 350px;
-    padding:20px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+.ecommerceCardContainer:hover .tiendaCard{
+    filter:blur(.5px);
+    opacity: 0.5;
+}
+.ecommerceCardContainer .tiendaCard:hover{
+    filter:blur(0px);
+    transform:scale(1.1);
+    opacity: 1;
 }
 nav{
     text-align: right;

@@ -61,3 +61,41 @@
     align-items: center;
 }
 
+@media all and (max-width: 768px){
+    .detailCard{
+        display: flex ;
+        flex-direction: column;
+        position: relative;
+        width: 300px;
+        height: auto;
+        overflow:hidden ;
+        margin: 40px 30px;
+        border-radius: 26px;
+        background: #ffffff;
+        box-shadow:  26px 26px 52px #ababab;
+    }
+    .detailCard img{
+        filter:brightness(0.75);
+        position: relative;
+        top:0px;
+        width: 100%;
+        height: 60%;
+    }
+    .detailCardInfo{
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        justify-content: space-between;
+        align-items: center;
+        text-align:center ;
+    }
+    .detailCardTitle{
+        color:#000000de;
+        font-size: 37px;
+        z-index: 10;
+    }
+    .detailCardText{
+        font-size: 16px;
+        color: #00000099;
+    }
+}

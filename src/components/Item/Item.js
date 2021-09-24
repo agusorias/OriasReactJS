@@ -9,7 +9,7 @@ const Item = ({item})=>{
                 <div className="cardInfo">
                     <h3 className="cardText">{item.name}</h3>  
                     <h4 className="cardPrice">${item.price}</h4> 
-                    <p>Ver detalle </p>
+                    <p className="cardFooter">Click para ver detalle </p>
                 </div>
             </div>
         </Link>

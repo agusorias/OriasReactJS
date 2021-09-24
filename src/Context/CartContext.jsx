@@ -10,8 +10,6 @@ const [cart, setCart] = useState([]);
 
 const isInCart = (id) => cart.some((item)=> item.id === id);
 
-console.log(cart);
-
 const addToCart = (item, quantity) =>{
 
   if(isInCart(item.id)){

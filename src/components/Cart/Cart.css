@@ -23,8 +23,9 @@
     right: 16px;
     z-index: 1000;
     border: none;
-    background-color: transparent;
-    color: #fff;
+    border-radius: 100%;
+    background-color: #ffffff38;
+    color: #ffffff80;
 }
 .cardInfo{
     display: flex;

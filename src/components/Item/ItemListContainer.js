@@ -8,11 +8,14 @@ function ItemListContainer(){
       
     const [item, setItem] = useState([])
     
+    const [loading, setLoading] = useState(true)
+
     const {categoriaItem} = useParams()
 
     useEffect(() => {
 
       const dataBase = getFirestore();
+
       if(categoriaItem===undefined){
         const queryDB = dataBase.collection('Items')
         queryDB.get().then((querySnapshot)=>{
@@ -34,21 +37,20 @@ function ItemListContainer(){
           setItem(querySnapshot.docs.map(item=>( {id : item.id , ...item.data() })))
         })
       }
-
+      setLoading(false)
     }, [categoriaItem])
     
   return (
-    <div className='ecommerceCardContainer'>
-        <ItemList items={item}/>
-    </div>
+    <>
+      {loading ? 
+        <h2>Cargando</h2>
+        :  
+      <div className='ecommerceCardContainer'>
+          <ItemList items={item}/>
+      </div>
+      }
+    </>
   )
 }
 
 export default ItemListContainer;
-      /* if(categoriaItem===undefined){
-        queryDB
-        .then(data=>{setItem(data.docs.map(item=>( {id : item.id , ...item.data() })))})
-      }else{
-        queryDB
-        .then(data=>{setItem(data.docs.filter(renderCategory=>categoriaItem===renderCategory.categoria))})
-      } */

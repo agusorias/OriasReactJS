@@ -11,34 +11,31 @@ function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Link to ="/" style={{ textDecoration: 'none' }}>        
-                <Navbar.Brand href="/" id="brandName">
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Link to ="/" className="d-inline-block align-top" style={{ textDecoration: 'none',color:'white' }}>        
                     <img
                     alt=""
                     src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13189.png"
                     width="40"
                     height="40"
-                    className="d-inline-block align-top"
                     />{' '}
                     ECOrdoba
-                </Navbar.Brand>
-            </Link>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                    <Nav.Link href="#pricing">Contacto</Nav.Link>
-                    <NavDropdown title="Tienda" id="collasible-nav-dropdown">
-                        <Link to="/"><NavDropdown.Item href="#action/3.1">Ir a la tienda</NavDropdown.Item></Link>
-                        <NavDropdown.Divider />
-                        <Link to="/category/Limpieza"><NavDropdown.Item href="#action/3.2">Limpieza</NavDropdown.Item></Link>
-                        <Link to="/category/Higiene"><NavDropdown.Item href="#action/3.3">Higiene</NavDropdown.Item></Link>
-                        <Link to="/category/Reciclaje"><NavDropdown.Item href="#action/3.4">Reciclaje</NavDropdown.Item></Link>
-                    </NavDropdown>
-                </Nav>
-                <Link to='/cart' >
+                </Link>
+                <Link to='/cart' className="d-inline-block align-top, cartWidget" style={{ textDecoration: 'none' }} >
                     <CartWidget/>
                 </Link >
-            </Navbar.Collapse>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#pricing">Contacto</Nav.Link>
+                        <NavDropdown title="Tienda" id="collasible-nav-dropdown">
+                            <Link to="/"><NavDropdown.Item href="#action/3.1">Ir a la tienda</NavDropdown.Item></Link>
+                            <NavDropdown.Divider />
+                            <Link to="/category/Limpieza"><NavDropdown.Item href="#action/3.2">Limpieza</NavDropdown.Item></Link>
+                            <Link to="/category/Higiene"><NavDropdown.Item href="#action/3.3">Higiene</NavDropdown.Item></Link>
+                            <Link to="/category/Reciclaje"><NavDropdown.Item href="#action/3.4">Reciclaje</NavDropdown.Item></Link>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
        

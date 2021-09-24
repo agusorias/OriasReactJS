@@ -6,8 +6,7 @@
     margin: 40px 30px;
     border-radius: 26px;
     background: #ffffff;
-    box-shadow:  26px 26px 52px #ababab,
-                -26px -26px 52px #ffffff;
+    box-shadow:  26px 26px 52px #ababab;
 }
 .tiendaCard img{
     filter:brightness(0.75);
@@ -33,4 +32,8 @@
 .cardPrice{
     font-size: 24px;
     color: #00000099;
+}
+.cardFooter{
+    font-size: 16px;
+    color: #0000004d;
 }
