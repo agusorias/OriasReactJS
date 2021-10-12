@@ -1,8 +1,9 @@
 import {  useCartContext } from "../../Context/CartContext"
 import {useState} from 'react';
 import "./Cart.css";
-import '../../App.css';
 import { getFirestore } from "../../service/getFirebase";
+import firebase from "firebase";
+import 'firebase/firestore';
 
 
 const Cart = () => {
@@ -11,10 +12,9 @@ const Cart = () => {
 
     const {cart, clear, precioTotal, removeItem} = useCartContext() 
 
-    function handleChange(e){
+    function handleChange(){
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
         })
     }
     function handleSubmit(e){
@@ -23,9 +23,9 @@ const Cart = () => {
         const newOrder={
             buyer:formData,
             items:cart,
-            total:precioTotal()
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total:precioTotal(),
         }
-
         const db = getFirestore()
         const orders= db.collection('orders')
         orders.add(newOrder)
@@ -36,29 +36,49 @@ const Cart = () => {
     }
 
     if(cart.length!==0){
-        return  <div>
-                    <div className="ecommerceCardContainer">
-                        {cart.map(pro =><div className="cartCard">
-                                            <img src={pro.img} alt={pro.name}></img>
-                                                <div className="cardInfo">
-                                                    <h3 className="cardText">{pro.name}</h3>  
-                                                    <h4 className="cardPrice">{pro.quantity} x ${pro.price} = $ {pro.quantity*pro.price}</h4> 
-                                                </div> 
-                                            <button onClick={()=>removeItem(pro.id)} >X</button>
-                                        </div>
+        return  <div className="cart">
+                    <table>
+                        <tr className="cartHeader">
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                        {cart.map(pro =><tr className="cartTr">
+                                            <td className="cartIdentifier">
+                                               {pro.name}
+                                            </td>
+                                            <td>
+                                                {pro.quantity} x ${pro.price}
+                                            </td>
+                                            <td>
+                                                $ {pro.quantity*pro.price}
+                                                <button className="cartDelete" onClick={()=>removeItem(pro.id)} >X</button>
+                                            </td>
+                                        </tr>
                         )}
+                        <tr className="cartHeader">
+                            <td></td>
+                            <td><button onClick={clear} >Reset</button></td>
+                            <td>
+                                Total: $ {precioTotal()}
+                            </td>
+                        </tr>
+                    </table>
+                    <div className="order">
+                        <form onChange={handleChange}>
+                            <label>Nombre</label><br/>
+                            <input type="text" placeholder="Ingrese nombre" name="name"/><br/>
+                            <label>N° de contacto</label><br/>
+                            <input type="tel" placeholder="Ingrese número de contacto" name="tel"/><br/>
+                            <label>E-mail</label><br/>
+                            <input type="email" placeholder="Ingrese dirección e-mail" name="email"/>
+                            <input type="email" placeholder="Confirme dirección e-mail" name="email2"/>
+                        </form>
+                        <button onClick={handleSubmit} >REALIZAR PEDIDO</button>
                     </div>
-                    <form onChange={handleChange}>
-                        <input type="text" placeholder="Ingrese nombre " name="name" value={formData.name}/>
-                        <input type="tel" placeholder="Ingrese número de contacto" name="tel" value={formData.tel}/>
-                        <input type="email" placeholder="Ingrese dirección e-mail " name="email" value={formData.email}/>
-                        <input type="email" placeholder="Confirme dirección e-mail" name="email2"/>
-                    </form>
-                    <button onClick={handleSubmit} >Total: $ {precioTotal()}</button>
-                    <button onClick={clear} >Borrar listado Cart</button>
                 </div>
     }
-    return <h2>No hay nada</h2>
+    return <h2 className="loading">Aquí aún no hay nada</h2>
 }
 
 export default Cart

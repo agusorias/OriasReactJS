@@ -22,7 +22,7 @@ const ItemDetailContainer = (props) => {
     return (
         <>
             {loading ? 
-                <h2>Cargando</h2>
+                <h2 className="loading">Cargando</h2>
                 :        
                 <div className="itemDetailContainer">
                     <ItemDetail item={itemDetail}/>

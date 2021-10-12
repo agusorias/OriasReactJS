@@ -21,18 +21,8 @@ function ItemListContainer(){
         queryDB.get().then((querySnapshot)=>{
           setItem(querySnapshot.docs.map(item=>( {id : item.id , ...item.data() })))
         })
-      }else if(categoriaItem==='Limpieza'){
-        const queryDB = dataBase.collection('Items').where('categoria','==','Limpieza')
-        queryDB.get().then((querySnapshot)=>{
-          setItem(querySnapshot.docs.map(item=>( {id : item.id , ...item.data() })))
-        })
-      }else if(categoriaItem==='Higiene'){
-        const queryDB = dataBase.collection('Items').where('categoria','==','Higiene')
-        queryDB.get().then((querySnapshot)=>{
-          setItem(querySnapshot.docs.map(item=>( {id : item.id , ...item.data() })))
-        })
-      }else if(categoriaItem==='Reciclaje'){
-        const queryDB = dataBase.collection('Items').where('categoria','==','Reciclaje')
+      }else {
+        const queryDB = dataBase.collection('Items').where('categoria','==',categoriaItem)
         queryDB.get().then((querySnapshot)=>{
           setItem(querySnapshot.docs.map(item=>( {id : item.id , ...item.data() })))
         })
@@ -43,7 +33,7 @@ function ItemListContainer(){
   return (
     <>
       {loading ? 
-        <h2>Cargando</h2>
+        <h2 className="loading">Cargando</h2>
         :  
       <div className='ecommerceCardContainer'>
           <ItemList items={item}/>
