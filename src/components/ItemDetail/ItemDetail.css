@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    height: 100vh;
 }
 .detailCard{
     position: relative;
@@ -12,9 +13,11 @@
     overflow:hidden ;
     margin: 20px 30px;
     border-radius: 26px;
-    background: #ffffff;
-    box-shadow:  26px 26px 52px #ababab,
-                -26px -26px 52px #ffffff;
+    border-color: yellowgreen;
+    border: solid 10px;
+    background: #000000;
+    /* box-shadow:  12px 12px 24px #ababab,
+                -12px -12px 24px #ffffff; */
 }
 .detailCard img{
     filter:brightness(0.75);
@@ -26,9 +29,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
 }
 .counterButtons{
-    color: #00000099;
+    color: #dbf3c7de;
     padding: 5px;
     background: none;
     border: none;
@@ -55,15 +60,16 @@
 }
 .detailCardTitle{
     text-align: center;
-    color:#000000de;
+    color:#dbf3c7de;
     font-size: 38px;
     z-index: 10;
 }
 .detailCardText{
     text-align: center;
-    color:#00000099;
-    font-size: 18px;
+    color:#dbf3c7de;
+    font-size: 20px;
     z-index: 10;
+    padding: 3%;
 }
 .cardBuyContainer,.cardBuyInfo{
     display: flex;

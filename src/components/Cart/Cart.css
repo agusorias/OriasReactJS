@@ -6,20 +6,21 @@
 table{
     text-align: center;
     width: 90%;
+    color: white;
 }
 tr{
     border-top: 1px solid #0000004d;
     height: 50px;
 }
 .cartHeader{
-    font-size: 25px;
-    height: 80px;
+    font-size: 20px;
+    height: 70px;
 }
 td{
     width: 33%;
 }
 .cartIdentifier{
-    font-weight: 500;
+    font-weight: 400;
 }
 .cartDelete{
     position: absolute;
@@ -27,19 +28,19 @@ td{
     border: none;
     background-color: transparent;
     font-weight: 600;
-    color:#0000004d;
+    color:#d312124d;
 }
 .cartHeader button{
     border: none;
     background-color: transparent;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     text-decoration-line: underline;
-    color:#0000004d;
+    color:#e40505;
 }
 .order{
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba(150, 230, 126, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(17, 94, 7, 0.37);
     backdrop-filter: blur( 11px );
     -webkit-backdrop-filter: blur( 11px );
     border-radius: 0px 0px 26px 26px;
@@ -47,7 +48,8 @@ td{
     justify-content: space-evenly;
     align-items: center;
     width: 90%;
-    font-weight: 500;
+    font-weight: 400;
+    color: white;
 }
 form{
     width: 50%;
@@ -64,8 +66,8 @@ input{
     border-radius: 26px;
     height: 200px;
     width: 200px;
-    background-color: #008000;
-    color: #fff;
+    background-color: #37ac37;
+    color: rgb(216, 252, 212);
 }
 .order button:hover{
     transform:scale(1.1);
@@ -73,6 +75,6 @@ input{
 }
 .order button:active {
     filter:contrast(75%);
-    box-shadow: 0 5px #666;
+    box-shadow: 0 5px rgb(91, 109, 84);
     transform: translateY(4px);
 }

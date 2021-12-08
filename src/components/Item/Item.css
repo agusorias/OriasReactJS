@@ -1,12 +1,15 @@
 .tiendaCard{
     position: relative;
-    width: 300px;
-    height: 450px;
+    width: 400px;
+    height: 600px;
     overflow:hidden ;
     margin: 40px 30px;
-    border-radius: 26px;
+    border-radius: 3px;
+    border:rgb(43, 117, 8) solid 25px;
     background: #ffffff;
-    box-shadow:  26px 26px 52px #ababab;
+    box-shadow:  26px 26px 52px #314d25;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
 }
 .tiendaCard img{
     filter:brightness(0.75);
@@ -23,17 +26,18 @@
     justify-content: space-between;
     align-items: center;
     text-align:center ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .cardText{
-    color:#000000de;
+    color:#235005de;
     font-size: 37px;
     z-index: 10;
 }
 .cardPrice{
     font-size: 24px;
-    color: #00000099;
+    color: black;
 }
 .cardFooter{
     font-size: 16px;
-    color: #0000004d;
+    color: grey;
 }

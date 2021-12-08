@@ -9,17 +9,17 @@ import "./NavBar.css";
 
 function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navbar">
             <Container>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Link to ="/" className="d-inline-block align-top" style={{ textDecoration: 'none',color:'white' }}>        
                     <img
                     alt=""
-                    src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13189.png"
+                    src="https://images.squarespace-cdn.com/content/v1/56719903a128e6f2ce15bc2a/1451316473318-HWO61TZQXER7SDOSKC4Z/BosqueVivo-logo-white-text-no-tagline.png"
                     width="40"
                     height="40"
                     />{' '}
-                    ECOrdoba
+                    BosqueVivo
                 </Link>
                 <Link to='/cart' className="d-inline-block align-top, cartWidget" style={{ textDecoration: 'none' }} >
                     <CartWidget/>
